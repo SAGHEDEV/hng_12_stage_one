@@ -9,14 +9,18 @@
   <body>
     <main class="container">
       <div class="card">
+        <div class="clock" id="utcClock" data-testid="currentTimeUTC">
+          Loading...
+        </div>
         <div class="data-section profile">
           <img
             src="https://ca.slack-edge.com/T086NG3N69Y-U08B26RKG01-gffe181429ed-48"
             alt="profile-picture"
             class="profile-picture"
+            data-testid="profilePicture"
           />
-          <p class="profile-name">Adekola Abdulhakeem</p>
-          <p class="profile-job">
+          <p class="profile-name" data-testid="fullName">Adekola Abdulhakeem</p>
+          <p class="profile-job" data-testid="jobTitle">
             <img
               src="https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
               alt="role"
@@ -24,7 +28,7 @@
             />
             Frontend Developer
           </p>
-          <p class="profile-email">
+          <p class="profile-email" data-testid="emailAddress">
             <img
               src="https://cdn-icons-png.flaticon.com/128/732/732200.png"
               alt="email"
@@ -34,7 +38,7 @@
               >abdulhakeem080255@gmail.com</a
             >
           </p>
-          <p class="location">
+          <p class="location" data-testid="currentLocation">
             <img
               src="https://cdn-icons-png.flaticon.com/128/684/684908.png"
               alt="location"
@@ -45,38 +49,43 @@
         </div>
         <div class="data-section">
           <span class="topic">Short Biography</span>
-          <p class="about">
+          <p class="about" data-testid="shortBio">
             Passionate about building beautiful and functional web experiences.
             Always eager to learn and grow in the world of frontend development.
           </p>
         </div>
         <div class="data-section social-links">
           <a
-            href="https://twitter.com/yourhandle"
+            data-testid="socialLinks"
+            href="https://x.com/SAGHE_DEV"
             class="social-button twitter"
             target="_blank"
             >Twitter</a
           >
           <a
-            href="https://facebook.com/yourhandle"
+            data-testid="socialLinks"
+            href="https://web.facebook.com/profile.php?id=100083027216029"
             class="social-button facebook"
             target="_blank"
             >Facebook</a
           >
           <a
+            data-testid="socialLinks"
             href="https://instagram.com/yourhandle"
             class="social-button instagram"
             target="_blank"
             >Instagram</a
           >
           <a
-            href="https://linkedin.com/in/yourhandle"
+            data-testid="socialLinks"
+            href="https://www.linkedin.com/in/adekola-abdulhakeem-saghe-dev-18132532b/"
             class="social-button linkedin"
             target="_blank"
             >LinkedIn</a
           >
           <a
-            href="https://github.com/yourhandle"
+            data-testid="socialLinks"
+            href="https://github.com/SAGHE_DEV"
             class="social-button github"
             target="_blank"
             >GitHub</a
@@ -84,5 +93,15 @@
         </div>
       </div>
     </main>
+
+    <script>
+      function updateTime() {
+        const now = new Date();
+        const utcTime = now.toUTCString().split(" ")[4]; // Extracts only HH:MM:SS
+        document.getElementById("utcClock").textContent = utcTime;
+      }
+      updateTime();
+      setInterval(updateTime, 1000);
+    </script>
   </body>
 </html>

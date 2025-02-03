@@ -178,3 +178,15 @@ img {
 .social-button:hover {
   opacity: 0.8;
 }
+
+.clock {
+  font-size: 2rem;
+  padding: 20px;
+  border: 2px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  width: 100%;
+  background-color: rgba(0, 39, 77, 0.1);
+  text-align: center;
+  font-weight: 700;
+}
